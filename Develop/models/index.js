@@ -13,13 +13,13 @@ Category.hasMany(Product, {
   foreignKey: 'category_id' // REF: https://sequelize.org/docs/v6/core-concepts/assocs/
 });
 // Products belongToMany Tags (through ProductTag)
-Product.belongToMany(Tags, {  // REF: https://sequelize.org/docs/v6/core-concepts/assocs/
+Product.belongsToMany(Tags, {  // REF: https://sequelize.org/docs/v6/core-concepts/assocs/
   through: ProductTag,
   as: 'productTag_products',
   foreignKey: 'product_id'
 });
 // Tags belongToMany Products (through ProductTag)
-Tags.belongToMany(Product, { // REF: https://sequelize.org/docs/v6/core-concepts/assocs/
+Tags.belongsToMany(Product, { // REF: https://sequelize.org/docs/v6/core-concepts/assocs/
   through: ProductTag,
   as: 'productTag_products',
   foreignKey: 'tag_id'

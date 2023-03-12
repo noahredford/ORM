@@ -18,7 +18,7 @@ Category.findAll({
 router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
-    const categoryData = await Category.findByPk(req.params.id, { //REF: https://sequelize.org/docs/v6/core-concepts/model-querying-finders/
+    const categoryData = await Category.findByPk(req.params.id, { //REF - findByPk: https://sequelize.org/docs/v6/core-concepts/model-querying-finders/
       include: [{model: Product}]
     }).then(categoryData => {
       if (!categoryData) {
